@@ -14,6 +14,6 @@ $(document).ready(function () {
         $("#outputMsg").text("Congrats!!!!!!!! your WOW is WOWing me!");
     $("#outputDiv").toggle();
       var div = $("div");
-      div.animate({fontSize: '3em'}, "slow");
+      div.animate({fontSize: '2em'}, "slow");
   });
 });
