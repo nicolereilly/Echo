@@ -1,2 +1,2 @@
-# delta-lab
-Delta Lab
+# Echo-lab
+Echo Lab
