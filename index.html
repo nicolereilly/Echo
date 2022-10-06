@@ -1,72 +1,71 @@
 <!DOCTYPE html>
 
-<html lang="en" >
-<!-- Header -->
-<head>
-  <meta charset="UTF-8">
-  <title>Doge Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="style/style.css">
+<html lang="en">
 
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nicole Delta Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  
+  <body class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Nicole's Name Game</a>
+        <a href="pages/charlie-index.html">go to my Charlie game</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-<!-- Nav Bar -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Nicole Reilly</a>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link active" href="https://github.com/nicolereilly/charlie-lab">check out the code !</a>
-    </li>
-    </ul>
-  </div>
-</nav>
+      <!-- this is my name game card -->
+      <div class="col-sm-8 offset-sm-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Spirit animal discovery</h4>
+            <p class="card-text">Give me your name to discover your spirit animal!</p>
 
-<body>
-<div class="row">
-<div class="col-md-6 offset-md-4">
-  <h2>Welcome to THE doge game</h2>
-</div>
-</div>
+            <label for="userName" class="form-label">insert your name please !</label>
+            <input
+              type="text"
+              id="userName"
+              class="form-control"
+              name="userName"
+            />
+            <button id="btnGetFacts" class="btn btn-secondary">
+              discover your identity
+            </button>
 
-<!-- Intro title-->
-<div class="row">
-<div class="col-md-7 offset-md-3">
-  <h1>Pick my favorite Doge, choose carefully.</h1>
-</div>
-</div>
+            <br />
 
-<!-- Output message-->
-<div id="outputDiv" class="row">
-  <div class="col-md-8 offset-md-3">
-    <h1 id="outputMsg">OUTPUT MESSAGE
-    </h1>
-  </div>
-</div>
+            <span id="coolNameFactsOutput"> </span>
+            <!-- <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a> -->
+          </div>
+        </div>
+      </div>
 
-<!-- Doge 1 -->
-<div class="row">
-  <div class="card col-md-4 offset-md-1">
-  <div class="card-body">
-    <h4 class="doge1">DOGE 1</h4>
-    <img id="dogeOne" class="card-img-top" src='data:image/jpeg;base64,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' alt=''>
-
-  </div>
-  </div>
-
-<!-- Doge 2 -->
-  <div class="card col-md-4 offset-md-1">
-  <div class="card-body">
-    <h4 class="doge2">DOGE 2</h4>
-    <img id="dogeTwo" class="img-fluid" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYTeDw6oB4q5LbDiKS6gj4IpqtwqOCC5OSg&usqp=CAU' alt="doge meme">
-  </div>
-  </div>
-</div>
-
-
-<!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js'></script><script  src="script/script.js"></script>
-
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
 </html>

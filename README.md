@@ -1,2 +1,2 @@
-# charlie-lab
-Charlie Lab
+# delta-lab
+Delta Lab
